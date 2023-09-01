@@ -41,7 +41,7 @@ const loadData = async (id = '1000', isSortByView = false) => {
 const showCards = (data, isSortByView) => {
   const cardsContainer = document.getElementById('card-container');
 
-  // sorting by view
+  // sorting by views
   if(isSortByView){
     data.sort((a, b)=>{
       const numA = parseInt(a.others.views);
@@ -71,9 +71,23 @@ const showCards = (data, isSortByView) => {
     const card = document.createElement('div');
     card.classList.add('card', 'm-1', 'bg-base-100', 'shadow');
 
+    // convart sec into hours and min
+    let hour;
+    let min;
+
+    if(item.others.posted_date !== ''){
+      const seconds = parseInt(item.others.posted_date);
+      hour = Math.floor(seconds / 3600);
+      min = Math.floor((seconds % 3600) / 60);
+
+    }
+
     const cardContent = `
-      <figure class="px-5 pt-5">
+      <figure class="px-5 pt-5 relative">
         <img src=${item.thumbnail} alt="${item.title}" class="rounded-xl" />
+        ${typeof hour !== 'undefined' ? `
+          <span class="absolute bottom-2  right-7 text-white bg-black px-1 rounded">${hour}hrs ${min}min</span>
+        `: ''}
       </figure>
 
       <div class="card-body p-3 items-start text-start">
