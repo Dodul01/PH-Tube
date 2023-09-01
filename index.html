@@ -16,7 +16,7 @@
       <img src="./Logo.png" alt="logo">
     </div>
     <div class="m-2">
-      <button class="btn capitalize">Sort By View</button>
+      <button onclick="sortByView()" class="btn capitalize">Sort By View</button>
     </div>
     <div class="m-2">
       <button class="btn btn-error text-white">Blog</button>
@@ -27,12 +27,14 @@
   <!-- Main Section Starts Here -->
   <main>
     <!-- Category Button Container Starts Here -->
-    <div id="category-btn-container" class="flex items-center justify-center">
-      
+    <div id="category-btn-container" class="flex items-center justify-center flex-col lg:flex-row md:flex-row">
+
     </div>
     <!-- Category Button Container Ends Here -->
 
-    <!--  -->
+    <!-- Cards Container Starts Here -->
+    <div id="card-container" class="grid lg:grid-cols-4 md:grid-cols-2"></div>
+    <!-- Cards Container Ends Here -->
   </main>
   <!-- Main Section Ends Here -->
   <script src="./script/main.js"></script>
