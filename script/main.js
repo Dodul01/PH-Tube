@@ -1,3 +1,7 @@
+// variable for sorting
+let categoryIdForSort;
+let isSortByView;
+
 // Fetch Data For Category Button
 const fetchBtnCategory = async () => {
   const request = await fetch('https://openapi.programming-hero.com/api/videos/categories');
@@ -19,21 +23,34 @@ const fetchBtnCategory = async () => {
 // show data by category
 const handleClick = (id) => {
   const categoryId = id;
+  categoryIdForSort = id;
+
   loadData(categoryId);
 }
 
 // Fetch data for card
-const loadData = async (id = '1000') => {
+const loadData = async (id = '1000', isSortByView = false) => {
   const request = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
   const response = await request.json();
   const cardsData = response.data;
-  showCards(cardsData);
+
+  showCards(cardsData, isSortByView);
 }
 
 // Showing Cards
-const showCards = (data) => {
+const showCards = (data, isSortByView) => {
   const cardsContainer = document.getElementById('card-container');
 
+  // sorting by view
+  if(isSortByView){
+    data.sort((a, b)=>{
+      const numA = parseInt(a.others.views);
+      const numB = parseInt(b.others.views);
+
+      return numB - numA;
+    })
+  };
+  
   cardsContainer.innerHTML = ' ';
 
   // noData found page
@@ -99,6 +116,10 @@ const showCards = (data) => {
   })
 }
 
+const sortByView =()=>{
+  isSortByView = true;
+  loadData(categoryIdForSort ,isSortByView);
+}
 
 loadData();
 fetchBtnCategory();
