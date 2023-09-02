@@ -27,16 +27,56 @@
   <!-- Main section Starts Here -->
   <main>
     <div class="mb-3 p-2">
-      <h1 class="text-2xl font-semibold mb-2">Discuss the scope of var, let, and const</h1>
-      <p></p>
+      <h1 class="text-3xl font-semibold mb-4">Discuss the scope of var, let, and const</h1>
+      <p class="text-lg">
+        var is global scope variable and let ,const are block scope. we can't access this outside of
+        a function or any block but we can access var variable anywhere from our file. If we declare a variable called number
+        inside a function useing var keyword we can access the number variable outside of our function we can redeclure number 
+        variable it will not give us any error.
+      </p> <br>
+        <span class="my-10">
+          <span class="text-lg font-medium"> var number = 1;</span><br>
+          <span class="text-lg font-medium"> var number = 2;</span><br>
+          <span class="text-lg font-medium">console.log(number) //output 2</span><br>
+        </span>
+        <p class="mt-3 text-lg">
+          but if we try to do it in let it will give us an error. in let variable we can not redeclare a variable but we can 
+          reassign a value it is block scope so we can not access this value outside of function or any block. 
+          in const we can not redeclare or reassign a value and we can not access it's value outside of function it is also 
+          block scope.
+        </p>
     </div>
     <div class="mb-3 p-2">
-      <h1 class="text-2xl font-semibold mb-2">Tell us the use cases of null and undefined</h1>
-      <p></p>
+      <h1 class="text-3xl font-semibold mb-4">Tell us the use cases of null and undefined</h1>
+      <p class="text-lg">
+        Undefined means a variable is delcared but not assign a value and null means there is not value or empty value. We can
+        set null in a variable or object value if we have a variable or property name but we don't know the value. Null is a falsy
+        value. Undefined is also a falsy value but we don't use it to represent for empty variable. we can get undefined in our 
+        program.
+      </p>
+        <ul class="my-5">
+          <li class="text-lg font-medium my-1">if we don't return anything from function.</li>
+          <li class="text-lg font-medium my-1">if don't pass any value in function paremeter it will return undefined.</li>
+          <li class="text-lg font-medium my-1">if we try to access a property in an object that dosen't exsist will give us undefined.</li>
+          <li class="text-lg font-medium my-1">if we try to access an array value outside of the index range will give us undefined.</li>
+        </ul>
     </div>
     <div class="mb-3 p-2">
-      <h1 class="text-2xl font-semibold mb-2">What do you mean by REST API?</h1>
-      <p></p>
+      <h1 class="text-3xl font-semibold mb-2">What do you mean by REST API?</h1>
+      <p class="text-lg">
+        Rest API <span class="font-medium">( Representational State Transfer Application Programming Interface)</span><br>
+        Rest API use HTTP protocol for data transfer. it is interact with client application and API server.
+        A client send an HTTP request for data to an API Server and then server send an HTTP response to client application. Client 
+        also can POST,PUT,PATCH,DELETE data useing REST API.
+      </p>
+      <h4 class="text-lg font-medium mt-2">Rest API Methods</h4>
+      <ul class="my-3">
+        <li class="text-lg font-medium my-1">GET = Get the data from server show to the client.</li>
+        <li class="text-lg font-medium my-1">POST = Post data to the server.</li>
+        <li class="text-lg font-medium my-1">PUT = Update or replace the data.</li>
+        <li class="text-lg font-medium my-1">PATCH = Update exsisting the data.</li>
+        <li class="text-lg font-medium my-1">DELETE = Delete the data from server.</li>
+      </ul>
     </div>
   </main>
   <!-- Main section Starts Here -->

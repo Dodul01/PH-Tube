@@ -84,7 +84,7 @@ const showCards = (data, isSortByView) => {
 
     const cardContent = `
       <figure class="px-5 pt-5 relative">
-        <img src=${item.thumbnail} alt="${item.title}" class="rounded-xl" />
+        <img src=${item.thumbnail} alt="${item.title}" class="rounded lg:h-[150px] lg:w-[300px] lg:object-cover md:h-[200px] md:w-[400px] md:object-cover" />
         ${typeof hour !== 'undefined' ? `
           <span class="absolute bottom-2  right-7 text-white bg-black px-1 rounded">${hour}hrs ${min}min</span>
         `: ''}
